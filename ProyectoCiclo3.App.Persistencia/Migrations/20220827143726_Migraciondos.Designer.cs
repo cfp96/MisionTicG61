@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ProyectoCiclo3.App.Persistencia;
 
 namespace ProyectoCiclo3.App.Persistencia.Migrations
 {
     [DbContext(typeof(AppContext))]
-    partial class AppContextModelSnapshot : ModelSnapshot
+    [Migration("20220827143726_Migraciondos")]
+    partial class Migraciondos
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -50,16 +52,16 @@ namespace ProyectoCiclo3.App.Persistencia.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
-                    b.Property<int>("capacidad_maxima")
+                    b.Property<int>("capacidad_máxima")
                         .HasColumnType("int");
 
                     b.Property<string>("modelo")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("numero_de_asientos")
+                    b.Property<int>("numero_de_baños")
                         .HasColumnType("int");
 
-                    b.Property<int>("numero_de_banos")
+                    b.Property<int>("número_de_asientos")
                         .HasColumnType("int");
 
                     b.HasKey("id");
